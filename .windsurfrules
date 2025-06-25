@@ -1,0 +1,72 @@
+# .windsurfrules
+# Workspace-specific rules for Windsurf's AI (Cascade).
+# Place this file in your project's root directory.
+
+# 🧭 Workspace Identity
+Project: ESP-IDF CLion Project
+Tags:
+  - embedded
+  - esp-idf
+  - clion
+
+# 📁 Project Structure
+Directory layout:
+  - main/: "Contains the app entry point (main.c / main.cpp)."
+  - components/: "Reusable ESP-IDF components."
+  - sdkconfig & sdkconfig.defaults: "ESP-IDF configuration files."
+  - CMakeLists.txt: "Defines build via IDF CMake integration."
+
+# 🔧 Build & Flash Commands
+Build system:
+  - tool: idf.py
+  - commands:
+      - build: "Build the project"
+      - flash: "Flash to device via `idf.py -p <PORT> flash`"
+      - monitor: "Open serial monitor via `idf.py -p <PORT> monitor`"
+      - menuconfig: "Configure project with `idf.py menuconfig`"
+
+# 🛠️ Development Environment
+Environment preparation:
+  - script: "$IDF_PATH/export.sh (or export.bat on Windows)"
+  - note: "Launch CLion from a terminal with ESP-IDF environment loaded"
+  - prefer: "Use idf.py via the integrated toolchain"
+
+# 📐 Coding & Style Guidelines
+Coding standards:
+  - Use CMake + Ninja via ESP-IDF CMake integration.
+  - Configuration driven via `sdkconfig.defaults`; avoid manual SDKCONFIG edits.
+  - Components in `components/` should be modular and reusable.
+
+Naming conventions:
+  - main entry point: `app_main()`
+  - Component directories: `components/<component_name>/`
+  - Use lowercase + underscores for file names and C identifiers.
+
+# 🌲 Dependency Handling
+Component discovery:
+  - Cascade should scan `main/` and `components/` for `CMakeLists.txt` entries.
+  - Understand component inclusion via `idf_component_register`.
+
+# 🧪 Best Practices
+Testing & rebuild:
+  - Clear CMake cache: `idf.py fullclean`
+  - Use CLion's built-in CMake reload after env changes.
+  - Prefer `idf.py reconfigure` when changing `CONFIG_IDF_TARGET`.
+
+Flash/monitor:
+  - Ensure correct serial port (`/dev/ttyUSB0` or Windows COM port).
+  - Monitor logs for boot and partition table info.
+
+# 🤖 Guidance for Cascade (the AI)
+When assisting:
+  - Confirm `IDF_PATH` environment is active.
+  - Validate that `sdkconfig` reflects the project's target.
+  - Suggest `idf.py menuconfig` for config changes.
+  - Recommend CMake modifications in `main/CMakeLists.txt` or components.
+
+Avoid:
+  - Proposing modifications to non-source project files (e.g., `.idea/`).
+  - Suggesting commands outside the ESP-IDF toolkit.
+
+---
+

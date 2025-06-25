@@ -1,0 +1,95 @@
+dependencies:
+  espressif/esp32-camera:
+    component_hash: c3eb05fbeeae884a23bed9b17d48d5f0da8872beadae0c0e747d2fbea6094f06
+    dependencies: []
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 2.0.15
+  idf:
+    source:
+      type: idf
+    version: 5.1.1
+  mm_shims:
+    dependencies:
+    - name: idf
+      version: ==5.1.1
+    - name: mmutils
+      path: ../src/mmutils
+      version: ==2.6.4-esp32
+    source:
+      path: /home/josh/mm-iot-esp32/framework/mm_shims
+      type: local
+    targets:
+    - esp32s3
+    version: 2.6.4-esp32
+  mmipal:
+    dependencies:
+    - name: idf
+      version: ==5.1.1
+    - name: mmutils
+      path: ../mmutils
+      version: ==2.6.4-esp32
+    source:
+      path: /home/josh/mm-iot-esp32/framework/src/mmipal
+      type: local
+    targets:
+    - esp32s3
+    version: 2.6.4-esp32
+  mmiperf:
+    dependencies:
+    - name: idf
+      version: ==5.1.1
+    - name: mmipal
+      path: ../mmipal
+      version: ==2.6.4-esp32
+    source:
+      path: /home/josh/mm-iot-esp32/framework/src/mmiperf
+      type: local
+    targets:
+    - esp32s3
+    version: 2.6.4-esp32
+  mmpktmem:
+    dependencies:
+    - name: idf
+      version: ==5.1.1
+    source:
+      path: /home/josh/mm-iot-esp32/framework/src/mmpktmem
+      type: local
+    targets:
+    - esp32s3
+    version: 2.6.4-esp32
+  mmutils:
+    dependencies:
+    - name: idf
+      version: ==5.1.1
+    source:
+      path: /home/josh/mm-iot-esp32/framework/src/mmutils
+      type: local
+    targets:
+    - esp32s3
+    version: 2.6.4-esp32
+  morselib:
+    dependencies:
+    - name: idf
+      version: ==5.1.1
+    - name: mmpktmem
+      path: ../src/mmpktmem
+      version: ==2.6.4-esp32
+    source:
+      path: /home/josh/mm-iot-esp32/framework/morselib
+      type: local
+    targets:
+    - esp32s3
+    version: 2.6.4-esp32
+direct_dependencies:
+- espressif/esp32-camera
+- idf
+- mm_shims
+- mmipal
+- mmiperf
+- mmutils
+- morselib
+manifest_hash: 574a08928e12ad2874b001521255a9a40682bfd65a7102b49bb3c4815a4161d1
+target: esp32s3
+version: 2.0.0
