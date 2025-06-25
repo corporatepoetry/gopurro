@@ -1,4 +1,96 @@
 dependencies:
+  espp/base_component:
+    component_hash: fc113b37edc55d1600b56b26868ed669e8a9a251ffae3244b0df3dab10de81d9
+    dependencies:
+    - name: espp/logger
+      registry_url: https://components.espressif.com
+      require: private
+      version: '>=1.0'
+    - name: idf
+      require: private
+      version: '>=5.0'
+    source:
+      registry_url: https://components.espressif.com
+      type: service
+    version: 1.0.11
+  espp/format:
+    component_hash: 18b83f3075950153c3596cb42ba61abac9100504b395e5f3ac8a54df07dfe61d
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=5.0'
+    source:
+      registry_url: https://components.espressif.com
+      type: service
+    version: 1.0.11
+  espp/logger:
+    component_hash: 0198cc129fe3315d6aa892e9d752913e7385cc4fa33b183b361da4c618b4845f
+    dependencies:
+    - name: espp/format
+      registry_url: https://components.espressif.com
+      require: private
+      version: '>=1.0'
+    - name: idf
+      require: private
+      version: '>=5.0'
+    source:
+      registry_url: https://components.espressif.com
+      type: service
+    version: 1.0.11
+  espp/rtsp:
+    component_hash: 4d2f596eec49a35d0e5aad80298b09f929db58ee8ed706ea2299e4ecd744dafb
+    dependencies:
+    - name: espp/base_component
+      registry_url: https://components.espressif.com
+      require: private
+      version: '>=1.0'
+    - name: espp/socket
+      registry_url: https://components.espressif.com
+      require: private
+      version: '>=1.0'
+    - name: espp/task
+      registry_url: https://components.espressif.com
+      require: private
+      version: '>=1.0'
+    - name: idf
+      require: private
+      version: '>=5.0'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 1.0.11
+  espp/socket:
+    component_hash: f253cd1eaf9316a67850d31c6c4e0afd565246bf57cca4f8bff3cdec7936bd7f
+    dependencies:
+    - name: espp/base_component
+      registry_url: https://components.espressif.com
+      require: private
+      version: '>=1.0'
+    - name: espp/task
+      registry_url: https://components.espressif.com
+      require: private
+      version: '>=1.0'
+    - name: idf
+      require: private
+      version: '>=5.0'
+    source:
+      registry_url: https://components.espressif.com
+      type: service
+    version: 1.0.11
+  espp/task:
+    component_hash: ceb5607383e0585ab312ac508a3e3d5e3c4825524298284108249e555e5c2a44
+    dependencies:
+    - name: espp/base_component
+      registry_url: https://components.espressif.com
+      require: private
+      version: '>=1.0'
+    - name: idf
+      require: private
+      version: '>=5.0'
+    source:
+      registry_url: https://components.espressif.com
+      type: service
+    version: 1.0.11
   espressif/esp32-camera:
     component_hash: c3eb05fbeeae884a23bed9b17d48d5f0da8872beadae0c0e747d2fbea6094f06
     dependencies: []
@@ -83,6 +175,7 @@ dependencies:
     - esp32s3
     version: 2.6.4-esp32
 direct_dependencies:
+- espp/rtsp
 - espressif/esp32-camera
 - idf
 - mm_shims
@@ -90,6 +183,6 @@ direct_dependencies:
 - mmiperf
 - mmutils
 - morselib
-manifest_hash: 574a08928e12ad2874b001521255a9a40682bfd65a7102b49bb3c4815a4161d1
+manifest_hash: 3cf25a1c0440ec17887c92250fa9625076f225c0e9eded6e69d171f9c5c16929
 target: esp32s3
 version: 2.0.0
