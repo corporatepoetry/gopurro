@@ -10,7 +10,7 @@ dependencies:
       require: private
       version: '>=5.0'
     source:
-      registry_url: https://components.espressif.com
+      registry_url: https://components.espressif.com/
       type: service
     version: 1.0.11
   espp/format:
@@ -78,18 +78,10 @@ dependencies:
       type: service
     version: 1.0.11
   espp/task:
-    component_hash: ceb5607383e0585ab312ac508a3e3d5e3c4825524298284108249e555e5c2a44
-    dependencies:
-    - name: espp/base_component
-      registry_url: https://components.espressif.com
-      require: private
-      version: '>=1.0'
-    - name: idf
-      require: private
-      version: '>=5.0'
+    dependencies: []
     source:
-      registry_url: https://components.espressif.com
-      type: service
+      path: /home/josh/workspace/gopurro/components/espp__task
+      type: local
     version: 1.0.11
   espressif/esp32-camera:
     component_hash: c3eb05fbeeae884a23bed9b17d48d5f0da8872beadae0c0e747d2fbea6094f06
@@ -108,73 +100,74 @@ dependencies:
       version: ==5.1.1
     - name: mmutils
       path: ../src/mmutils
-      version: ==2.6.4-esp32
+      version: ==2.7.2-esp32
     source:
-      path: /home/josh/mm-iot-esp32/framework/mm_shims
+      path: /home/josh/esp/mm-iot-esp32/framework/mm_shims
       type: local
     targets:
     - esp32s3
-    version: 2.6.4-esp32
+    version: 2.7.2-esp32
   mmipal:
     dependencies:
     - name: idf
       version: ==5.1.1
     - name: mmutils
       path: ../mmutils
-      version: ==2.6.4-esp32
+      version: ==2.7.2-esp32
     source:
-      path: /home/josh/mm-iot-esp32/framework/src/mmipal
+      path: /home/josh/esp/mm-iot-esp32/framework/src/mmipal
       type: local
     targets:
     - esp32s3
-    version: 2.6.4-esp32
+    version: 2.7.2-esp32
   mmiperf:
     dependencies:
     - name: idf
       version: ==5.1.1
     - name: mmipal
       path: ../mmipal
-      version: ==2.6.4-esp32
+      version: ==2.7.2-esp32
     source:
-      path: /home/josh/mm-iot-esp32/framework/src/mmiperf
+      path: /home/josh/esp/mm-iot-esp32/framework/src/mmiperf
       type: local
     targets:
     - esp32s3
-    version: 2.6.4-esp32
+    version: 2.7.2-esp32
   mmpktmem:
     dependencies:
     - name: idf
       version: ==5.1.1
     source:
-      path: /home/josh/mm-iot-esp32/framework/src/mmpktmem
+      path: /home/josh/esp/mm-iot-esp32/framework/src/mmpktmem
       type: local
     targets:
     - esp32s3
-    version: 2.6.4-esp32
+    version: 2.7.2-esp32
   mmutils:
     dependencies:
     - name: idf
       version: ==5.1.1
     source:
-      path: /home/josh/mm-iot-esp32/framework/src/mmutils
+      path: /home/josh/esp/mm-iot-esp32/framework/src/mmutils
       type: local
     targets:
     - esp32s3
-    version: 2.6.4-esp32
+    version: 2.7.2-esp32
   morselib:
     dependencies:
     - name: idf
       version: ==5.1.1
     - name: mmpktmem
       path: ../src/mmpktmem
-      version: ==2.6.4-esp32
+      version: ==2.7.2-esp32
     source:
-      path: /home/josh/mm-iot-esp32/framework/morselib
+      path: /home/josh/esp/mm-iot-esp32/framework/morselib
       type: local
     targets:
     - esp32s3
-    version: 2.6.4-esp32
+    version: 2.7.2-esp32
 direct_dependencies:
+- espp/base_component
 - espp/rtsp
 - espressif/esp32-camera
 - idf
@@ -183,6 +176,6 @@ direct_dependencies:
 - mmiperf
 - mmutils
 - morselib
-manifest_hash: 3cf25a1c0440ec17887c92250fa9625076f225c0e9eded6e69d171f9c5c16929
+manifest_hash: 64df672d5a7b7c9a697655c616fe30f423bd42b81bdde0abed123a069742894a
 target: esp32s3
 version: 2.0.0
